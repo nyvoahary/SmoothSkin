@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+* {
+  margin: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-container::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: #ffceb8;
+  background-image: url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: clamp(400px, 100vw, 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.flex-container .left-side {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2vh;
+}
+
+.flex-container .left-side {
+  padding-left: 5vw;
+}
+
+.flex-container .left-side .sub-header {
+  font-family: "Arvo";
+  font-weight: bolder;
+  color: #acacac;
+  font-size: normal;
+  letter-spacing: 5px;
+}
+
+.flex-container .left-side > :nth-child(2) {
+  margin: 1.5rem 0px;
+  color: black;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: bolder;
+  font-family: "Open Sans", sans-serif;
+}
+
+.flex-container .left-side > :nth-child(2) span.tagline {
+  color: #db5252;
+}
+
+.flex-container .left-side > :nth-child(3) {
+  font-family: "Poppins";
+  color: #492923;
+  font-size: clamp(16px, 1.5vw, 22px);
+}
+
+.flex-container .left-side > :nth-child(3) #price,
+.flex-container .left-side > :nth-child(3) #money {
+  font-size: 3rem;
+  color: black;
+}
+
+.flex-container .left-side > :nth-child(3) #money {
+  color: #ffceb8;
+  font-family: "Raleway";
+}
+
+.flex-container .left-side .description {
+  margin: 3rem 0;
+}
+
+.flex-container .left-side .social-media a {
+  color: black;
+  text-decoration: none;
+  font-family: "Open sans";
+}
+
+.flex-container .right-side {
+  display: none;
+  width: 50%;
+  height: auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  font-size: larger;
+  border: 0px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #db5252;
+}
+/*# sourceMappingURL=styles.css.map */

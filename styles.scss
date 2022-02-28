@@ -10,19 +10,13 @@ $tagline: #492923;
 
 * {
     margin: 5px;
-    // border: black solid 1px;
     box-sizing: border-box;
 }
-// body {
-//     background-image: url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png);
-    
-// }
 .flex-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    // height: 100vh;
     &::after {
         content: "";
         width: 50%;
@@ -39,11 +33,9 @@ $tagline: #492923;
         z-index: -1;
     }
     .left-side {
-        // width: clamp(20vw, 50%, 60%);
         justify-content: space-around;
         display: flex;
         flex-direction: column;
-        // padding-left: 5vw;
         gap: 2vh;
         & {
             padding-left: 5vw;

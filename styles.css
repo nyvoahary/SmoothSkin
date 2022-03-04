@@ -7,30 +7,18 @@
           box-sizing: border-box;
 }
 
-.flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+main {
+  -webkit-animation: mainanimation 1s forwards ease-in-out 2s;
+          animation: mainanimation 1s forwards ease-in-out 2s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
-.flex-container::after {
+main::after {
   content: "";
   width: 50%;
   height: 100%;
-  background-color: #ffceb8;
-  background-image: url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png);
-  background-repeat: no-repeat;
-  background-position: bottom left;
+  background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png) no-repeat bottom left;
   background-size: clamp(400px, 100vw, 100%);
   position: absolute;
   top: 0;
@@ -38,7 +26,7 @@
   z-index: -1;
 }
 
-.flex-container .left-side {
+article {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   display: -webkit-box;
@@ -48,14 +36,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2vh;
+  height: 90vh;
 }
 
-.flex-container .left-side {
-  padding-left: 5vw;
-}
-
-.flex-container .left-side .sub-header {
+article .sub-header {
   font-family: "Arvo";
   font-weight: bolder;
   color: #acacac;
@@ -63,7 +47,7 @@
   letter-spacing: 5px;
 }
 
-.flex-container .left-side > :nth-child(2) {
+article h1 {
   margin: 1.5rem 0px;
   color: black;
   font-size: clamp(2rem, 3vw, 3rem);
@@ -71,55 +55,162 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.flex-container .left-side > :nth-child(2) span.tagline {
+article h1 span {
   color: #db5252;
 }
 
-.flex-container .left-side > :nth-child(3) {
+article .description {
   font-family: "Poppins";
   color: #492923;
   font-size: clamp(16px, 1.5vw, 22px);
 }
 
-.flex-container .left-side > :nth-child(3) #price,
-.flex-container .left-side > :nth-child(3) #money {
+article .pricing {
   font-size: 3rem;
-  color: black;
+  font-family: "Poppins";
 }
 
-.flex-container .left-side > :nth-child(3) #money {
+article .pricing .money {
   color: #ffceb8;
   font-family: "Raleway";
 }
 
-.flex-container .left-side .description {
-  margin: 3rem 0;
-}
-
-.flex-container .left-side .social-media a {
+article .social-media a {
   color: black;
   text-decoration: none;
   font-family: "Open sans";
 }
 
-.flex-container .right-side {
-  display: none;
-  width: 50%;
-  height: auto;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
 button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: black;
   color: white;
-  padding: 15px 30px;
+  padding: 10px 30px;
   font-size: larger;
-  border: 0px;
+  border: transparent;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #db5252;
+}
+
+.threedotloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.threedotloader .spacer {
+  -webkit-box-flex: 1;
+      -ms-flex: auto 1;
+          flex: auto 1;
+}
+
+.threedotloader .dot {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 1.4em;
+  background-color: #db5252;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  display: inline-block;
+  -webkit-animation: dotanim 3s ease-in-out;
+          animation: dotanim 3s ease-in-out;
+}
+
+.threedotloader .dot:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.threedotloader .dot:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.threedotloader .dot:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.threedotloader .dot:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dotanim {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes dotanim {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .pricing {
+    color: #ffceb8;
+  }
+  .pricing span.money {
+    color: black;
+  }
+}
+
+@-webkit-keyframes mainanimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes mainanimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
